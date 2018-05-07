@@ -6,9 +6,13 @@
   </script>
 <% end %>
 
-<p>set same margin for all products</p>
-<input type="text" name="margin" placeholder="margin %">
-<button>submit</button>
+<form class="" action="/product_variants" method="post">
+  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+  <input type="text" name="margin_all" placeholder="margin %">
+  <p>set same margin for all products</p>
+  <button>SUBMIT</button>
+ </form>
+
 <table class="results">
   <thead>
     <tr>
@@ -40,10 +44,14 @@
       <td class="variant_id"><%= product.variant_id %></td>
       <td><%= product.sku %></td>
       <td><%= product.name %></td>
-      <td></td>
+      <td><%= product.order_items.last.price %></td>
       <td><%= product.sales %></td>
       <td class="cost1"><%= product.cost %></td>
-      <td class="cost"><input type="text" name="cost" class="new_cost" placeholder="set cost"><button class="set_cost">submit</button></td>
+      <form class="" action="/product_variants" method="post">
+        <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+        <input type="hidden" name="variant_id" value="<%= product.variant_id %>">
+        <td class="cost"><input type="text" name="cost" class="new_cost" placeholder="set cost"><button class="set_cost">submit</button></td>
+      </form>
     </tr>
     <% end %>
     <% end %>
