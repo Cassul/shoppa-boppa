@@ -1,0 +1,220 @@
+--- !ruby/object:ShopifyAPI::Order
+attributes: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+  id: 380693315631
+  email: egnition_sample_3@egnition.com
+  closed_at:
+  created_at: '2018-04-13T00:21:40-04:00'
+  updated_at: '2018-04-13T00:21:40-04:00'
+  number: 40
+  note:
+  token: c7021cc53e18230caf29f4d52698fa5c
+  gateway: ''
+  test: false
+  total_price: '0.30'
+  subtotal_price: '0.30'
+  total_weight:
+  total_tax: '0.00'
+  taxes_included: false
+  currency: AUD
+  financial_status: pending
+  confirmed: true
+  total_discounts: '0.00'
+  total_line_items_price: '0.30'
+  cart_token:
+  buyer_accepts_marketing: false
+  name: "#1040"
+  referring_site:
+  landing_site:
+  cancelled_at:
+  cancel_reason:
+  total_price_usd: '0.23'
+  checkout_token:
+  reference:
+  user_id:
+  location_id:
+  source_identifier:
+  source_url:
+  processed_at: '2018-04-13T00:21:40-04:00'
+  device_id:
+  phone:
+  customer_locale:
+  app_id: 1608003
+  browser_ip:
+  landing_site_ref:
+  order_number: 1040
+  discount_codes: []
+  note_attributes: []
+  payment_gateway_names: []
+  processing_method: ''
+  checkout_id:
+  source_name: '1608003'
+  fulfillment_status:
+  tax_lines: []
+  tags: egnition-sample-data
+  contact_email: egnition_sample_3@egnition.com
+  order_status_url: https://checkout.shopify.com/1025474607/orders/c7021cc53e18230caf29f4d52698fa5c/authenticate?key=813adddaa3384d44f194545f79b65063
+  line_items:
+  - !ruby/object:ShopifyAPI::LineItem
+    attributes: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+      id: 783904735279
+      variant_id: 7558218285103
+      title: CONVERSE | CHUCK TAYLOR ALL STAR II HI
+      quantity: 1
+      price: '0.10'
+      sku: C-02-black-5
+      variant_title: 5 / black
+      vendor: CONVERSE
+      fulfillment_service: manual
+      product_id: 655664840751
+      requires_shipping: true
+      taxable: true
+      gift_card: false
+      name: CONVERSE | CHUCK TAYLOR ALL STAR II HI - 5 / black
+      variant_inventory_management: shopify
+      properties: []
+      product_exists: true
+      fulfillable_quantity: 1
+      grams: 0
+      total_discount: '0.00'
+      fulfillment_status:
+      tax_lines: []
+    prefix_options: {}
+    persisted: true
+  - !ruby/object:ShopifyAPI::LineItem
+    attributes: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+      id: 783904768047
+      variant_id: 7558217826351
+      title: CONVERSE | CHUCK TAYLOR ALL STAR LO
+      quantity: 1
+      price: '0.10'
+      sku: C-01-white-9
+      variant_title: 9 / white
+      vendor: CONVERSE
+      fulfillment_service: manual
+      product_id: 655664742447
+      requires_shipping: true
+      taxable: true
+      gift_card: false
+      name: CONVERSE | CHUCK TAYLOR ALL STAR LO - 9 / white
+      variant_inventory_management: shopify
+      properties: []
+      product_exists: true
+      fulfillable_quantity: 1
+      grams: 0
+      total_discount: '0.00'
+      fulfillment_status:
+      tax_lines: []
+    prefix_options: {}
+    persisted: true
+  - !ruby/object:ShopifyAPI::LineItem
+    attributes: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+      id: 783904800815
+      variant_id: 7558216646703
+      title: DR MARTENS | 1460Z DMC 8-EYE BOOT | CHERRY SMOOTH
+      quantity: 1
+      price: '0.10'
+      sku: DM-03-red-3
+      variant_title: 3 / red
+      vendor: DR MARTENS
+      fulfillment_service: manual
+      product_id: 655664644143
+      requires_shipping: true
+      taxable: true
+      gift_card: false
+      name: DR MARTENS | 1460Z DMC 8-EYE BOOT | CHERRY SMOOTH - 3 / red
+      variant_inventory_management: shopify
+      properties: []
+      product_exists: true
+      fulfillable_quantity: 1
+      grams: 0
+      total_discount: '0.00'
+      fulfillment_status:
+      tax_lines: []
+    prefix_options: {}
+    persisted: true
+  shipping_lines: []
+  billing_address: !ruby/object:ShopifyAPI::BillingAddress
+    attributes: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+      first_name: Adrian
+      address1: 30 Legiendamm street
+      phone: "+49123456789012"
+      city: Berlin
+      zip: '10117'
+      province: Berlin
+      country: Germany
+      last_name: 'Alscher '
+      address2:
+      company:
+      latitude:
+      longitude:
+      name: 'Adrian Alscher '
+      country_code: DE
+      province_code:
+    prefix_options: {}
+    persisted: true
+  shipping_address: !ruby/object:ShopifyAPI::ShippingAddress
+    attributes: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+      first_name: Adrian
+      address1: 30 Legiendamm street
+      phone: "+49123456789012"
+      city: Berlin
+      zip: '10117'
+      province: Berlin
+      country: Germany
+      last_name: 'Alscher '
+      address2:
+      company:
+      latitude:
+      longitude:
+      name: 'Adrian Alscher '
+      country_code: DE
+      province_code:
+    prefix_options: {}
+    persisted: true
+  fulfillments: []
+  refunds: []
+  customer: !ruby/object:ShopifyAPI::Customer
+    attributes: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+      id: 451078160431
+      email: egnition_sample_3@egnition.com
+      accepts_marketing: false
+      created_at: '2018-04-13T00:15:02-04:00'
+      updated_at: '2018-04-13T00:21:40-04:00'
+      first_name: Adrian
+      last_name: Alscher
+      orders_count: 8
+      state: disabled
+      total_spent: '0.00'
+      last_order_id: 380693315631
+      note:
+      verified_email: true
+      multipass_identifier:
+      tax_exempt: false
+      phone: "+49123456789012"
+      tags: egnition-sample-data
+      last_order_name: "#1040"
+      default_address: !ruby/object:ShopifyAPI::Customer::DefaultAddress
+        attributes: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+          id: 505980878895
+          customer_id: 451078160431
+          first_name: Adrian
+          last_name: 'Alscher '
+          company:
+          address1: 30 Legiendamm street
+          address2:
+          city: Berlin
+          province: Berlin
+          country: Germany
+          zip: '10117'
+          phone: "+49123456789012"
+          name: 'Adrian Alscher '
+          province_code:
+          country_code: DE
+          country_name: Germany
+          default: true
+        prefix_options: {}
+        persisted: true
+    prefix_options: {}
+    persisted: true
+prefix_options: {}
+persisted: true
