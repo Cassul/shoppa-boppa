@@ -44,6 +44,7 @@ module HomeHelper
               else
                 @product_variant.shop_id = @shop.id
                 @product_variant.variant_id = item.variant_id
+                @product_variant.price = ShopifyAPI::Variant.find(@product_variant.variant_id).price
                 @product_variant.variant_title = item.variant_title
                 @product_variant.sku = item.sku
                 @product_variant.name = item.name
