@@ -5,13 +5,17 @@
     });
   </script>
 <% end %>
-
+<h1>Manage products costs</h1>
+<h3>On this page you can set costs by uploading CSV file or if you're using same margin for all products. Manual cost setting is also available</h3>
 <form class="" action="/product_variants" method="post">
   <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
   <input type="text" name="margin_all" placeholder="margin %">
-  <p>set same margin for all products</p>
+  <p>set cost for all products if your margin is the same for all products</p>
   <button>SUBMIT</button>
  </form>
+
+ <p>upload CSV</p>
+ <input type="file" name="csv" placeholder="csv">
 
 <table class="results">
   <thead>
