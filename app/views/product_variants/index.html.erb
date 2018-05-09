@@ -14,8 +14,11 @@
   <button>SUBMIT</button>
  </form>
 
- <p>upload CSV</p>
- <input type="file" name="csv" placeholder="csv">
+ <h3>Import a CSV File</h3>
+  <%= form_tag import_product_variants_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import CSV" %>
+  <% end %>
 
 <table class="results">
   <thead>

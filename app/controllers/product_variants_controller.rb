@@ -16,6 +16,16 @@ class ProductVariantsController < ApplicationController
       product_variant = ProductVariant.find_by(variant_id: params["variant_id"])
       product_variant.cost = (product_variant.order_items.last.price.to_f * (100 - params["cost"].to_f) / 100).to_s
     end
-      redirect_back fallback_location: root_path
+      redirect_to product_variants_url
   end
+
+  def import
+    begin
+      ProductVariant.import(params[:file])
+      redirect_to root_url, notice: "Products imported."
+    rescue
+      redirect_to root_url, notice: "Invalid CSV file format."
+    end
+  end
+
 end
