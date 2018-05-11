@@ -1,7 +1,7 @@
 <% content_for :javascript do %>
   <script type="text/javascript">
     ShopifyApp.ready(function(){
-      ShopifyApp.Bar.initialize({ title: "Home" });
+      ShopifyApp.Bar.initialize({ title: "Home / Manage Cost" });
     });
   </script>
 <% end %>
@@ -54,15 +54,19 @@
       <td><%= product.price %></td>
       <td><%= product.sales %></td>
       <td class="cost1"><%= product.cost %></td>
+      <td class="cost">
       <form class="" action="/product_variants" method="post">
         <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
         <input type="hidden" name="variant_id" value="<%= product.variant_id %>">
-        <td class="cost"><input type="text" name="cost" class="new_cost" placeholder="set cost"><button class="set_cost">submit</button></td>
+        <input type="text" name="cost" class="new_cost" placeholder="set cost">
+          <button class="set_cost">submit</button>
       </form>
+    </td>
     </tr>
     <% end %>
     <% end %>
   </tbody>
 </table>
+
 
 <%= will_paginate @prod %>

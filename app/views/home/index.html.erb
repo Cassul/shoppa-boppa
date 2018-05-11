@@ -6,44 +6,15 @@
   </script>
 <% end %>
 
-<table class="results">
-  <thead>
-    <tr>
-      <th>Product</th>
-      <th>Product_id</th>
-      <th>SKU</th>
-      <th>Inventory quantity</th>
-      <th>Price</th>
-      <th>Previously sold</th>
-      <th class="align-right">Cost</th>
-      <th>Set cost</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @prod.each do |prod| %>
-    <tr>
-      <td><b><%= prod.title %></b></td>
-      <td>total sales = <%= prod.sales %></td>
-      <td>id = <%= prod.product_id %></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
+<h1>Top ten best selling products</h1>
+<ol>
+  <% @prod.each do |prod| %>
+  <li><b><%= prod.title %></b> id = <%= prod.product_id %> total sales = <%= prod.sales %></li>
     <% prod.product_variants.each do |product|%>
-    <tr class="papa">
-      <td><a href="#"><%= product.variant_title %></a></td>
-      <td class="variant_id"><%= product.variant_id %></td>
-      <td><%= product.sku %></td>
-      <td><%= product.name %></td>
-      <td></td>
-      <td><%= product.sales %></td>
-      <td class="cost1"><%= product.cost %></td>
-      <td class="cost"><input type="text" name="cost" class="new_cost" placeholder="set cost"><button class="set_cost">submit</button></td>
-    </tr>
+    <ul>
+    <a href="#"><li><%= product.variant_title %> | id = <%= product.variant_id %> | sku = <%= product.sku %> | sales = <%= product.sales %> | cost = <%= product.cost %> | price = <%= product.price %></a></li>
+    </ul>
     <% end %>
     <% end %>
-  </tbody>
-</table>
-
+</ol>
+    

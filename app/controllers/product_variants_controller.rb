@@ -12,11 +12,11 @@ class ProductVariantsController < ApplicationController
         v.save
       end
     end
-    if params["cost"]
+    if params["variant_id"] && params["cost"]
       product_variant = ProductVariant.find_by(variant_id: params["variant_id"])
-      product_variant.cost = (product_variant.order_items.last.price.to_f * (100 - params["cost"].to_f) / 100).to_s
+      product_variant.cost = params["cost"]
     end
-      redirect_to product_variants_url
+      redirect_to "/product_variants"
   end
 
   def import
