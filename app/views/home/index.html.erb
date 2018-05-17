@@ -13,10 +13,10 @@
     <ol>
       <% @prod.each do |prod| %>
       <div class="card">
-        <li><span class="tag green"><%= prod.title %></span> id = <%= prod.product_id %> <span class="tag blue">total sales = <%= prod.sales %></b></li>
+        <li><span class="tag blue"><%= prod.title %></span> id = <%= prod.product_id %> <span class="tag red">total sales = <%= prod.sales %></b></li>
           <% prod.product_variants.each do |product|%>
           <ul>
-            <a href="#"><li><span class="tag yellow"><%= product.variant_title %></span> | id = <%= product.variant_id %> | sku = <%= product.sku %> |<span class="tag grey"> sales = <%= product.sales %></span> | cost = <%= product.cost %> | price = <%= product.price %></a></li>
+            <a href="#"><li><span class="tag green"><%= product.variant_title %></span> | id = <%= product.variant_id %> | sku = <%= product.sku %> |<span class="tag red"> sales = <%= product.sales %></span> | cost = <%= product.cost %> | price = <%= product.price %></a></li>
           </ul>
           <% end %>
       </div>

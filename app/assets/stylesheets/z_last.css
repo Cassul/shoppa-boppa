@@ -1,0 +1,16 @@
+.variants_section {
+  display: flex;
+  flex-direction: column;
+}
+
+.variants_card {
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  text-align: center;
+}
+
+.variants_article {
+  max-height: 200px;
+}
+

@@ -5,68 +5,84 @@
     });
   </script>
 <% end %>
-<h1>Manage products costs</h1>
-<h3>On this page you can set costs by uploading CSV file or if you're using same margin for all products. Manual cost setting is also available</h3>
-<form class="" action="/product_variants" method="post">
-  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
-  <input type="text" name="margin_all" placeholder="margin %">
-  <p>set cost for all products if your margin is the same for all products</p>
-  <button>SUBMIT</button>
- </form>
-
- <h3>Import a CSV File</h3>
-  <%= form_tag import_product_variants_path, multipart: true do %>
-    <%= file_field_tag :file %>
-    <%= submit_tag "Import CSV" %>
-  <% end %>
-
-<table class="results">
-  <thead>
-    <tr>
-      <th>Product</th>
-      <th>Product_id</th>
-      <th>SKU</th>
-      <th>Inventory quantity</th>
-      <th>Price</th>
-      <th>Previously sold</th>
-      <th class="align-right">Cost</th>
-      <th>Set cost</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @prod.each do |prod| %>
-    <tr>
-      <td><b><%= prod.title %></b></td>
-      <td>total sales = <%= prod.sales %></td>
-      <td>id = <%= prod.product_id %></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <% prod.product_variants.each do |product|%>
-    <tr class="papa">
-      <td><a href="#"><%= product.variant_title %></a></td>
-      <td class="variant_id"><%= product.variant_id %></td>
-      <td><%= product.sku %></td>
-      <td><%= product.name %></td>
-      <td><%= product.price %></td>
-      <td><%= product.sales %></td>
-      <td class="cost1"><%= product.cost %></td>
-      <td class="cost">
+<header>
+  <h1>Manage products costs</h1>
+  <h3>On this page you can set costs by uploading CSV file or if you're using same margin for all products. Manual cost setting is also available</h3>
+</header>
+<section class="variants_section">
+  <article class="variants_article">
+    <div class="card variants_card">    
       <form class="" action="/product_variants" method="post">
         <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
-        <input type="hidden" name="variant_id" value="<%= product.variant_id %>">
-        <input type="text" name="cost" class="new_cost" placeholder="set cost">
-          <button class="set_cost">submit</button>
-      </form>
-    </td>
-    </tr>
-    <% end %>
-    <% end %>
-  </tbody>
-</table>
+        <div class="input-group">
+          <span class="append">%</span>
+          <input type="text" name="margin_all" placeholder="margin %">
+          <span class="append">.00</span>
+        </div>
+        <p>set cost for all products if your margin is the same for all products</p>
+        <button>SUBMIT</button>
+       </form>
+    </div>
+  </article>
+
+  <article class="variants_article">
+    <div class="card variants_card">  
+      <h3>Import a CSV File</h3>
+      <%= form_tag import_product_variants_path, multipart: true do %>
+        <%= file_field_tag :file %>
+        <%= submit_tag "Import CSV" %>
+      <% end %>
+    </div>
+  </article>
+
+  <table class="results">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Product_id</th>
+        <th>SKU</th>
+        <th>Inventory quantity</th>
+        <th>Price</th>
+        <th>Previously sold</th>
+        <th class="align-right">Cost</th>
+        <th>Set cost</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @prod.each do |prod| %>
+      <tr>
+        <td><b><%= prod.title %></b></td>
+        <td>total sales = <%= prod.sales %></td>
+        <td>id = <%= prod.product_id %></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <% prod.product_variants.each do |product|%>
+      <tr class="papa">
+        <td><a href="#"><%= product.variant_title %></a></td>
+        <td class="variant_id"><%= product.variant_id %></td>
+        <td><%= product.sku %></td>
+        <td><%= product.name %></td>
+        <td><%= product.price %></td>
+        <td><%= product.sales %></td>
+        <td class="cost1"><%= product.cost %></td>
+        <td class="cost">
+        <form class="" action="/product_variants" method="post">
+          <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+          <input type="hidden" name="variant_id" value="<%= product.variant_id %>">
+          <input type="text" name="cost" class="new_cost" placeholder="set cost">
+            <button class="set_cost">submit</button>
+        </form>
+      </td>
+      </tr>
+      <% end %>
+      <% end %>
+    </tbody>
+  </table>
 
 
-<%= will_paginate @prod %>
+  <%= will_paginate @prod %>
+</section>

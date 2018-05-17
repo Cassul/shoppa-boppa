@@ -7,6 +7,7 @@ ShopifyApp.configure do |config|
   config.after_authenticate_job = false
   config.session_repository = Shop
   config.webhooks = [
-    {topic: 'orders/fulfilled', address: 'https://7fca1f39.ngrok.io/orders/fulfilled', format: 'json'}
+    {topic: 'products/create', address: 'https://00e310f9.ngrok.io/webhooks/products_create', format: 'json'},
+    {topic: 'orders/fulfilled', address: 'https://f560eaf4.ngrok.io/webhooks/order_fulfilled', format: 'json'}
   ]
 end
