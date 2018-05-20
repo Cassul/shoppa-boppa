@@ -9,6 +9,7 @@ class HomeController < ShopifyApp::AuthenticatedController
       save_orders_in_database
     end
     @prod = Product.where(shop_id: @shop.id).order('sales DESC').first(10)
+    # byebug
   end
 
   def create

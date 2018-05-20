@@ -44,7 +44,11 @@ module HomeHelper
               else
                 @product_variant.shop_id = @shop.id
                 @product_variant.variant_id = item.variant_id
-                @product_variant.price = ShopifyAPI::Variant.find(@product_variant.variant_id).price
+                begin
+                  @product_variant.price = ShopifyAPI::Variant.find(@product_variant.variant_id).price
+                  rescue ActiveResource::ResourceNotFound
+                  nil
+                end
                 @product_variant.variant_title = item.variant_title
                 @product_variant.sku = item.sku
                 @product_variant.name = item.name
